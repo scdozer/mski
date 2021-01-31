@@ -5,6 +5,7 @@ import { Canvas, useLoader } from "react-three-fiber";
 import Refract from "./../refractor";
 import { OrbitControls } from "@react-three/drei";
 import img from "./../../assets/main.jpeg";
+import { Html } from "@react-three/drei";
 
 // import img from "/assets/main.jpeg";
 
@@ -30,8 +31,13 @@ export default function HomeCanvas() {
       <ambientLight intensity={0.9} />
       <Suspense fallback={null}>
         <OrbitControls />
-        <Image />
-        <Refract />
+        <group position={[0, 1, 0]}>
+          <Image />
+          <Refract />
+          {/* <Html scaleFactor={8}>
+            <div class="overlay">move me</div>
+          </Html> */}
+        </group>
       </Suspense>
     </Canvas>
   );

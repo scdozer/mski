@@ -1,5 +1,6 @@
 body {
   background: black;
+  font-family: 'Creepster', cursive;
 }
 canvas{
   width: 100%;
@@ -24,6 +25,14 @@ canvas{
   font-size: 20px;
 }
 
+.overlay{
+  color: lightpink;
+  font-size: 10px;
+  background: black;
+  width: auto;
+  margin-top: 300px;
+}
+
 @media screen and (max-width: 992px) {
   .content {
     bottom: 5px;
@@ -37,6 +46,9 @@ canvas{
   .content p, .content a{
     color: white;
     font-size: 14px;
+  }
+  .overlay{
+    margin-top: 200px;
   }
 }
 
