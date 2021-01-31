@@ -1,15 +1,7 @@
-import React, { useEffect, useRef, useMemo, Suspense } from "react";
-import {
-  shaderMaterial,
-  useTexture,
-  OrthographicCamera,
-  Text,
-} from "@react-three/drei";
-
-// import { shaderMaterial } from "drei"
-
-import { extend, useFrame, createPortal, useThree } from "react-three-fiber";
-import * as THREE from "three";
+import React, { useEffect, useRef, Suspense } from "react";
+import { shaderMaterial, useTexture } from "@react-three/drei";
+import { extend, useFrame } from "react-three-fiber";
+import img from "./../../assets/main.jpeg";
 
 const RefractionMaterial = shaderMaterial(
   {
@@ -57,7 +49,7 @@ extend({ RefractionMaterial });
 
 const Refract = () => {
   const ref = useRef();
-  const texture = useTexture("/assets/main.jpeg");
+  const texture = useTexture(img);
 
   useFrame((state) => {
     if (ref.current.material.uniforms.envmap) {
@@ -76,8 +68,8 @@ const Refract = () => {
   return (
     <>
       <Suspense fallback={null}>
-        <mesh ref={ref} position={[0, 0, -1]}>
-          <sphereBufferGeometry args={[2, 32, 32]} />
+        <mesh ref={ref} position={[0, 0, -4]}>
+          <sphereBufferGeometry args={[6, 32, 32]} />
           <refractionMaterial />
         </mesh>
       </Suspense>

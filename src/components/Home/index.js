@@ -1,14 +1,15 @@
 import * as THREE from "three";
+import { DoubleSide } from "three";
 import React, { Suspense } from "react";
 import { Canvas, useLoader } from "react-three-fiber";
-import Refract from "./../diamonds/";
+import Refract from "./../refractor";
 import { OrbitControls } from "@react-three/drei";
-import { BackSide, FrontSide } from "three";
+import img from "./../../assets/main.jpeg";
 
 // import img from "/assets/main.jpeg";
 
 function Image() {
-  const texture = useLoader(THREE.TextureLoader, "/assets/main.jpeg");
+  const texture = useLoader(THREE.TextureLoader, img);
   return (
     <mesh>
       <planeBufferGeometry attach="geometry" args={[6, 6]} />
@@ -17,7 +18,7 @@ function Image() {
         map={texture}
         toneMapped={true}
         // side={FrontSide}
-        // side={Backside}
+        side={DoubleSide}
       />
     </mesh>
   );
@@ -26,7 +27,7 @@ function Image() {
 export default function HomeCanvas() {
   return (
     <Canvas colorManagement>
-      <ambientLight intensity={0.5} />
+      <ambientLight intensity={0.9} />
       <Suspense fallback={null}>
         <OrbitControls />
         <Image />
