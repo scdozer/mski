@@ -25,5 +25,18 @@ canvas{
 }
 
 
+@media screen and (max-width: 992px) {
+  .content h1 {
+    font-size: 30px;
+    color: white;
+    padding: 10px;
+    margin: 0px;
+  }
+  .content p, .content a{
+    color: white;
+    font-size: 14px;
+  }
+}
+
 
 
