@@ -13,7 +13,7 @@ function Image() {
   const texture = useLoader(THREE.TextureLoader, img);
   return (
     <mesh>
-      <planeBufferGeometry attach="geometry" args={[6, 6]} />
+      <planeBufferGeometry attach="geometry" args={[6.5, 6.5]} />
       <meshBasicMaterial
         attach="material"
         map={texture}
@@ -30,8 +30,12 @@ export default function HomeCanvas() {
     <Canvas colorManagement>
       <ambientLight intensity={0.9} />
       <Suspense fallback={null}>
-        <OrbitControls />
-        <group position={[0, 1, 0]}>
+        <OrbitControls
+          maxPolarAngle={Math.PI / 2}
+          minPolarAngle={Math.PI / 2}
+          enableZoom={false}
+        />
+        <group position={[0, 0, 0]}>
           <Image />
           <Refract />
           {/* <Html scaleFactor={8}>

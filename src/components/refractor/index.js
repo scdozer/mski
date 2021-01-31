@@ -68,8 +68,8 @@ const Refract = () => {
   return (
     <>
       <Suspense fallback={null}>
-        <mesh ref={ref} position={[0, 0, -4]}>
-          <sphereBufferGeometry args={[6, 32, 32]} />
+        <mesh ref={ref} position={[0, 0, -2]}>
+          <sphereBufferGeometry args={[5, 32, 32]} />
           <refractionMaterial />
         </mesh>
       </Suspense>
