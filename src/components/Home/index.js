@@ -5,7 +5,7 @@ import { Canvas, useLoader } from "react-three-fiber";
 import Refract from "./../refractor";
 import { OrbitControls } from "@react-three/drei";
 import img from "./../../assets/main.jpeg";
-import { Html } from "@react-three/drei";
+// import { Html } from "@react-three/drei";
 
 // import img from "/assets/main.jpeg";
 
